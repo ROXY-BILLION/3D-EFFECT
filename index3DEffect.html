@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3D Hover Effect</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/js/all.min.js"></script>
+    <link rel="stylesheet" href="style30.css">
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+</head>
+<body>
+    <div class="card">
+      <div class="content">
+        <div class="con">
+            <div class="user"><span class="fas fa-user"></span></div>
+        </div>
+            <header>Roxy Billion</header>
+        <div class="follow-us">Follow us</div>
+        <div class="icons">
+            <a href="#"><span class="fab fa-facebook"></span></a>
+            <a href="#"><span class="fab fa-twitter"></span></a>
+            <a href="#"><span class="fab fa-instagram"></span></a>
+            <a href="#"><span class="fab fa-github"></span></a>
+        </div>
+      </div>
+    </div>
+    <script>
+        $('body').mousemove(function(p){
+            let rotateX = -($(window).innerWidth()/2 - p.pageX)/20;
+            let rotateY = -($(window).innerWidth()/2 - p.pageY)/10;
+            $('.card').css("transform", "rotateX("+rotateX+"deg) rotateY("+rotateY+"deg)");
+        });
+        $(document).mouseout(function(){
+            $('.card').css("transform", "");
+        });
+    </script>
+</body>
+</html>
